@@ -142,13 +142,13 @@ public class opmodeTeleopMain extends LinearOpMode {
             inputLeftTrack =  -(gamepad1.left_stick_y);
             inputRightTrack = -(gamepad1.right_stick_y);
 
-            // Drivetrain Type determined by 'Drivetrain Mode' enumeration selection (Default to Field Centric)
+            // Drivetrain Type determined by 'Drivetrain Mode' enumeration selection (Default to Arcade)
             if(sysDrivetrain.getLabelDrivetrainMode().equals(utilRobotConstants.Drivetrain.LIST_MODE_TYPE_DRIVETRAIN_TANK_MODE)) {
-                // Send gamepad input for drivetrain to driveMecanum method in the drivetrain system class
+                // Send gamepad input for drivetrain to driveDifferentialTank method in the drivetrain system class
                 sysDrivetrain.driveDifferentialTank(inputLeftTrack, inputRightTrack, sysDrivetrain.getValueDrivetrainOutputPower());
             }
             else {
-                // Send gamepad input for drivetrain to driveMecanumFieldCentric method in the drivetrain system class
+                // Send gamepad input for drivetrain to driveDifferentialArcade method in the drivetrain system class
                 sysDrivetrain.driveDifferentialArcade(inputDrive, inputTurn, sysDrivetrain.getValueDrivetrainOutputPower());
             }
 
